@@ -8,7 +8,6 @@ namespace Phillips_Crawling_Task.Service
 {
     public class XpathStrings
     {
-        public static readonly string PastAuctionsXpath = "//a[.='Past Auctions']";
 
         public static readonly string FineWatchAuctionsXpath = "//h4[contains(text(),'Fine Watches')]/ancestor::div[@class='pastBox']";
 
@@ -18,7 +17,8 @@ namespace Phillips_Crawling_Task.Service
         public static readonly string TimeDurationXpath = ".//p[@class='auctionDate']";
         public static readonly string AuctionResultLinkXpath = "(//h4[contains(text(),'Fine Watches')]/ancestor::div[@class='pastBox']/div/div[@class='auctionBtn']/a[.='View Auction Result'])";
 
-        public static readonly string AuctionDateXpath = ".//p[@class='auctionDate']";
+        public static readonly string AuctionDateXpath = "//p[@class='auctionDate']";
+        public static readonly string AuctionStatusXpath = "//div[@class='auctionInfo']/h3";
         public static readonly string WatchListXpath = "//div[@class='lotBox lightbox d-lg-flex justify-content-lg-between']";
         public static readonly string WatchImageUrlXpath = ".//img[@class='shadow-img1 mb-4']";
         public static readonly string WatchArtistXpath = ".//h4[@class='artistName']";
