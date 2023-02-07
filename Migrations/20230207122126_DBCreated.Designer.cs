@@ -11,7 +11,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Artiana_Crawling.Migrations
 {
     [DbContext(typeof(ArtianaWatchesDbContext))]
-    [Migration("20230207121831_DBCreated")]
+    [Migration("20230207122126_DBCreated")]
     partial class DBCreated
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

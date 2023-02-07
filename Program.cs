@@ -112,7 +112,7 @@ namespace Artiana_Crawling
                         var watchDetails = new HtmlDocument();
                         watchDetails.LoadHtml(watchPageSource);
                         auctionResultLink = driver.Url ?? string.Empty;
-                        var auctionId = RegexString.AuctionIdRegex.Match(auctionResultLink);
+                        var auctionId = RegexString.AuctionIdRegex.Match(auctionResultLink).Groups[1].Value;
                         auctionDateString = watchDetails.DocumentNode.SelectSingleNode(XpathStrings.AuctionDateXpath)?.InnerText.Trim() ?? string.Empty;
                         auctionStatus = watchDetails.DocumentNode.SelectSingleNode(XpathStrings.AuctionStatusXpath)?.InnerText.Trim() ?? string.Empty;
 
