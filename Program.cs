@@ -210,12 +210,12 @@ namespace Artiana_Crawling
                                 var dimensionWidth = string.Empty;
                                 var dimensionUnit = string.Empty;
                                 var winnigBidString = string.Empty;
-                                var winnigBidUnit = string.Empty;
+                                var winnigBidCurrency = string.Empty;
                                 var winnigBid = string.Empty;
                                 var estimateString = string.Empty;
                                 var estimateStart = string.Empty;
                                 var estimateEnd = string.Empty;
-                                var estimateUnit = string.Empty;
+                                var estimateCurrency = string.Empty;
 
                                 watchImageUrl = BaseUrl + watch.SelectSingleNode(XpathStrings.WatchImageUrlXpath)?.GetAttributes("src").First().Value ?? string.Empty;
                                 watchArtist = watch.SelectSingleNode(XpathStrings.WatchArtistXpath)?.InnerText.Trim() ?? string.Empty;
@@ -242,14 +242,14 @@ namespace Artiana_Crawling
                                 if (!string.IsNullOrEmpty(winnigBidString))
                                 {
                                     winnigBid = RegexString.WinningBidRegex.Match(winnigBidString)?.Groups[7].Value ?? string.Empty;
-                                    winnigBidUnit = RegexString.WinningBidRegex.Match(winnigBidString)?.Groups[5].Value ?? string.Empty;
+                                    winnigBidCurrency = RegexString.WinningBidRegex.Match(winnigBidString)?.Groups[5].Value ?? string.Empty;
                                 }
 
                                 if (!string.IsNullOrEmpty(estimateString))
                                 {
                                     estimateStart = RegexString.EstimateRegex.Match(estimateString)?.Groups[5].Value ?? string.Empty;
                                     estimateEnd = RegexString.EstimateRegex.Match(estimateString)?.Groups[7].Value ?? string.Empty;
-                                    estimateUnit = RegexString.EstimateRegex.Match(estimateString)?.Groups[3].Value ?? string.Empty;
+                                    estimateCurrency = RegexString.EstimateRegex.Match(estimateString)?.Groups[3].Value ?? string.Empty;
                                 }
 
                                 Console.WriteLine($"----------Watch with Auction Id = {auctionId}----------");
@@ -264,10 +264,10 @@ namespace Artiana_Crawling
                                 Console.WriteLine($"Dimension Width: {dimensionWidth}");
                                 Console.WriteLine($"Dimension Unit: {dimensionUnit}");
                                 Console.WriteLine($"Winnig Bid: {winnigBid}");
-                                Console.WriteLine($"Winnig Bid Unit: {winnigBidUnit}");
+                                Console.WriteLine($"Winnig Bid Unit: {winnigBidCurrency}");
                                 Console.WriteLine($"Estimate Start: {estimateStart}");
                                 Console.WriteLine($"Estimate End: {estimateEnd}");
-                                Console.WriteLine($"Estimate Unit: {estimateUnit}");
+                                Console.WriteLine($"Estimate Unit: {estimateCurrency}");
                                 Console.WriteLine();
 
                                 var watchRecord = await _context.tbl_Watch_Details.Where(x => x.AuctionId == auctionId.ToString()).FirstOrDefaultAsync();
@@ -286,10 +286,10 @@ namespace Artiana_Crawling
                                     watchRecord.DimensionWidth = dimensionWidth;
                                     watchRecord.DimensionUnit = dimensionUnit;
                                     watchRecord.WinnigBid = winnigBid;
-                                    watchRecord.WinnigBidUnit = winnigBidUnit;
+                                    watchRecord.WinnigBidCurrency = winnigBidCurrency;
                                     watchRecord.EstimateStart = estimateStart;
                                     watchRecord.EstimateEnd = estimateEnd;
-                                    watchRecord.EstimateUnit = estimateUnit;
+                                    watchRecord.EstimateCurrency = estimateCurrency;
                                     _context.tbl_Watch_Details.Update(watchRecord);
                                 }
                                 else
@@ -308,10 +308,10 @@ namespace Artiana_Crawling
                                         DimensionWidth = dimensionWidth,
                                         DimensionUnit = dimensionUnit,
                                         WinnigBid = winnigBid,
-                                        WinnigBidUnit = winnigBidUnit,
+                                        WinnigBidCurrency = winnigBidCurrency,
                                         EstimateStart = estimateStart,
                                         EstimateEnd = estimateEnd,
-                                        EstimateUnit = estimateUnit,
+                                        EstimateCurrency = estimateCurrency,
                                     };
                                     await _context.tbl_Watch_Details.AddAsync(watchDetails1);
                                 }

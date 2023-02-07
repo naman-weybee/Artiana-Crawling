@@ -50,10 +50,10 @@ namespace Artiana_Crawling.Migrations
                     DimensionWidth = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     DimensionUnit = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     WinnigBid = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    WinnigBidUnit = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    WinnigBidCurrency = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     EstimateStart = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     EstimateEnd = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    EstimateUnit = table.Column<string>(type: "nvarchar(max)", nullable: true)
+                    EstimateCurrency = table.Column<string>(type: "nvarchar(max)", nullable: true)
                 },
                 constraints: table =>
                 {

@@ -100,13 +100,13 @@ namespace Artiana_Crawling.Migrations
                     b.Property<string>("DimensionWidth")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("EstimateCurrency")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("EstimateEnd")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("EstimateStart")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("EstimateUnit")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("ImageUrl")
@@ -124,7 +124,7 @@ namespace Artiana_Crawling.Migrations
                     b.Property<string>("WinnigBid")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("WinnigBidUnit")
+                    b.Property<string>("WinnigBidCurrency")
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");

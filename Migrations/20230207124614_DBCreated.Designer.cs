@@ -11,7 +11,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Artiana_Crawling.Migrations
 {
     [DbContext(typeof(ArtianaWatchesDbContext))]
-    [Migration("20230207122126_DBCreated")]
+    [Migration("20230207124614_DBCreated")]
     partial class DBCreated
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -102,13 +102,13 @@ namespace Artiana_Crawling.Migrations
                     b.Property<string>("DimensionWidth")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("EstimateCurrency")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("EstimateEnd")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("EstimateStart")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("EstimateUnit")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("ImageUrl")
@@ -126,7 +126,7 @@ namespace Artiana_Crawling.Migrations
                     b.Property<string>("WinnigBid")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("WinnigBidUnit")
+                    b.Property<string>("WinnigBidCurrency")
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");

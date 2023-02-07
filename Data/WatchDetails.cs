@@ -24,9 +24,9 @@ namespace Artiana_Crawling.Data
         public string? DimensionWidth { get; set; }
         public string? DimensionUnit { get; set; }
         public string? WinnigBid { get; set; }
-        public string? WinnigBidUnit { get; set; }
+        public string? WinnigBidCurrency { get; set; }
         public string? EstimateStart { get; set; }
         public string? EstimateEnd { get; set; }
-        public string? EstimateUnit { get; set; }
+        public string? EstimateCurrency { get; set; }
     }
 }
