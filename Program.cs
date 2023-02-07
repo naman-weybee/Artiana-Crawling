@@ -327,7 +327,6 @@ namespace Artiana_Crawling
                         GetFullyLoadedWebPage(driver);
                     }
                 }
-                driver.Close();
                 Console.WriteLine();
                 Console.WriteLine("Data Saved Successfully in WatchAuctions and WatchDetails Tables...!");
                 Console.WriteLine();
