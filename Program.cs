@@ -320,7 +320,7 @@ namespace Artiana_Crawling
                         await _context.SaveChangesAsync();
                         Console.WriteLine();
                         Console.WriteLine("=====================================================================================================================");
-                        Console.WriteLine($"Data Saved in WatchAuctions and WatchDetails Tables with AuctionId = {auctionId}");
+                        Console.WriteLine($"Data Saved Successfully in WatchAuctions and WatchDetails Tables with AuctionId = {auctionId}");
                         Console.WriteLine("=====================================================================================================================");
                         Console.WriteLine();
                         driver.Navigate().Back();
@@ -328,6 +328,9 @@ namespace Artiana_Crawling
                     }
                 }
                 driver.Close();
+                Console.WriteLine();
+                Console.WriteLine("Data Saved Successfully in WatchAuctions and WatchDetails Tables...!");
+                Console.WriteLine();
             }
             catch (Exception ex)
             {
