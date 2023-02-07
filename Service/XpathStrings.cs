@@ -16,7 +16,7 @@ namespace Phillips_Crawling_Task.Service
         public static readonly string AuctionTitleXpath = ".//h4[@class='auctionName']";
         public static readonly string SaleNumberXpath = ".//h5[contains(text(),'Sale Number')]";
         public static readonly string TimeDurationXpath = ".//p[@class='auctionDate']";
-        public static readonly string AuctionResultLinkXpath = "//h4[contains(text(),'Fine Watches')]/ancestor::div[@class='pastBox']/div/div[@class='auctionBtn']/a[.='View Auction Result']";
+        public static readonly string AuctionResultLinkXpath = "(//h4[contains(text(),'Fine Watches')]/ancestor::div[@class='pastBox']/div/div[@class='auctionBtn']/a[.='View Auction Result'])";
 
         public static readonly string AuctionDateXpath = ".//p[@class='auctionDate']";
         public static readonly string WatchListXpath = "//div[@class='lotBox lightbox d-lg-flex justify-content-lg-between']";
@@ -24,5 +24,7 @@ namespace Phillips_Crawling_Task.Service
         public static readonly string WatchArtistXpath = ".//h4[@class='artistName']";
         public static readonly string WatchPaintingNameXpath = ".//p[@class='paintingName']";
         public static readonly string WatchInfoXpath = ".//p[@class='info']";
+        public static readonly string WinningBidXpath = ".//h5[contains(text(),'Winning Bid')]";
+        public static readonly string EstimateXpath = ".//p[contains(text(),'Estimate')]";
     }
 }
